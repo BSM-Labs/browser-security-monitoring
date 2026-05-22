@@ -1,12 +1,11 @@
 """
 Experiment 1: BSM Content-Hash Whitelisting Evaluation
-For IEEE Access resubmission Access-2026-20421, Reviewer 2 Comment 2.1.
 
 Self-contained. Depends only on bsm_scorer.py from this package.
 No imports from the BSM browser-extension repo are required.
 
 WHAT THIS SCRIPT DOES:
-  1. Builds a SHA-256 whitelist over your benign library corpus.
+  1. Builds a SHA-256 whitelist over benign library corpus.
   2. Re-scores the benign corpus with the whitelist gate in front.
   3. Re-scores the malicious corpus with the whitelist gate in front.
   4. Runs a bypass adversarial test (malicious files renamed to library names).
@@ -15,14 +14,14 @@ WHAT THIS SCRIPT DOES:
 WHAT YOU NEED TO PROVIDE:
   - A directory of benign library .js files (48 files per the paper).
   - A directory of malicious .js files (1,061 files per the paper).
-  - At minimum, 30 malicious files that score >= 40 by your existing pipeline.
+  - At minimum, 30 malicious files that score >= 40 by existing pipeline.
 
 DIRECTORY LAYOUT THIS SCRIPT EXPECTS:
     eval_corpus/
         benign_48/        <-- 48 production library .js files
         malicious_1061/   <-- 1,061 malicious .js files
 
-If your directory layout differs, edit BENIGN_DIR and MALICIOUS_DIR below.
+If directory layout differs, edit BENIGN_DIR and MALICIOUS_DIR below.
 
 OUTPUT: a file `experiment1_results.json` plus stdout with all the numbers.
 """
@@ -36,7 +35,7 @@ from pathlib import Path
 from bsm_scorer import score_file, DEPLOYMENT_THRESHOLD
 
 # ----------------------------------------------------------------------
-# CONFIGURATION: edit these paths to match your corpus layout
+# CONFIGURATION: edit these paths to match corpus layout
 # ----------------------------------------------------------------------
 BENIGN_DIR    = Path("eval_corpus/benign_48")
 MALICIOUS_DIR = Path("eval_corpus/malicious_1061")
@@ -244,8 +243,8 @@ def main():
     print(f"<<WL_F1>>               = {metrics['f1']:.3f}")
     print(f"<<WL_BYPASS_DETECTED>>  = {bypass_eval['n_flagged']}")
     print("=" * 60)
-    print("\nNote: <<WL_AUROC>> requires re-running your AUROC computation")
-    print("excluding whitelisted samples. Use your existing AUROC code; the")
+    print("\nNote: <<WL_AUROC>> requires re-running AUROC computation")
+    print("excluding whitelisted samples. Use existing AUROC code; the")
     print("subset is all malicious files PLUS benign files whose hash is NOT")
     print("in wl_set. Pre-whitelist baseline AUROC reported in the paper: 0.60.\n")
 

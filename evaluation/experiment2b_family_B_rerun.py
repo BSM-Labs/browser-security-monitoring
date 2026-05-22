@@ -3,9 +3,7 @@ Experiment 2B: Family B rerun with joint encoding-plus-eval evasion.
 
 WHY THIS EXISTS:
 The original experiment2_adversarial.py implemented Family B as encoding-only
-substitution, leaving the eval() call intact. This produced 30/30 detection
-which technically reflects a partial-evasion threat model but invites a
-hostile reviewer to ask "did your transformation actually evade anything?"
+substitution, leaving the eval() call intact.
 
 This script reruns Family B with the eval call ALSO rewritten, producing a
 joint encoding-plus-eval evasion that maps to the realistic adaptive attacker.

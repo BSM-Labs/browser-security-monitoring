@@ -2,19 +2,19 @@
 Calibration: verify bsm_scorer.py reproduces the paper's existing numbers.
 
 Run this BEFORE running experiment1_whitelist.py or experiment2_adversarial.py.
-If calibration passes, the scorer is correctly reproducing your paper's
+If calibration passes, the scorer is correctly reproducing paper's
 existing harness. If it fails, you need to investigate the discrepancy
 before trusting the new experiment numbers.
 
-EXPECTED (from your published Tables 13 and 14):
+EXPECTED (from published Tables 13 and 14):
   Benign 48-library corpus:    10/48 flagged  ->  20.8% FPR
   Malicious 1,061-sample set:  632/1,061 flagged at T=40  ->  59.6% TPR
 
 ACCEPTABLE TOLERANCE: +/- 2 absolute percentage points. The static-source
 scoring is deterministic, so exact reproduction is the goal; small drift
-may indicate a different file encoding handling in your original harness.
+may indicate a different file encoding handling in the original harness.
 
-If your numbers differ by more than 2 points, see the troubleshooting block
+If numbers differ by more than 2 points, see the troubleshooting block
 at the bottom of this script.
 """
 
