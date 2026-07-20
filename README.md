@@ -1,6 +1,29 @@
 # BSM: Browser Security Monitoring Framework
 
-BSM (Browser Security Monitor) is a browser-resident security framework for real-time detection of JavaScript API abuse and direct prompt injection. This repository contains both the browser-extension prototype used for production monitoring and the Python evaluation harness that reproduces the static-evaluation, whitelisting, and adversarial-robustness results reported in the associated paper.
+BSM (Browser Security Monitor) is a browser-resident security framework for real-time detection of JavaScript API abuse and prompt injection attacks. This repository contains the browser-extension prototype used for production monitoring and the Python evaluation harness associated with the experiments reported in the published IEEE Access paper.
+
+## Associated publication
+
+This repository accompanies the following peer-reviewed article:
+
+**Sunil Kumar Vadlamani, Ajit Balaga, and Sridhar Pavithrapu, “BSM: A Browser-Resident Framework for Real-Time Detection of JavaScript API Abuse and Prompt Injection Attacks,” IEEE Access, 2026.**
+
+**DOI:** [10.1109/ACCESS.2026.3712744](https://doi.org/10.1109/ACCESS.2026.3712744)
+
+The repository contains the browser-extension prototype and evaluation utilities associated with the framework described in the paper. Please cite the article when using this repository, its implementation, datasets, evaluation methodology, or experimental results.
+
+### BibTeX
+
+```bibtex
+@article{vadlamani2026bsm,
+  author  = {Vadlamani, Sunil Kumar and Balaga, Ajit and Pavithrapu, Sridhar},
+  title   = {{BSM}: A Browser-Resident Framework for Real-Time Detection of JavaScript API Abuse and Prompt Injection Attacks},
+  journal = {IEEE Access},
+  year    = {2026},
+  doi     = {10.1109/ACCESS.2026.3712744}
+}
+```
+
 
 ## Repository structure
 
